@@ -56,7 +56,10 @@
 
   function toggleDone(e) {
     if(!e.target.matches('input')) return; // Skip this unless it's an input
-    console.log(e.target);
+    const el = e.target;
+    const index = el.dataset.index;
+    // This accesses the 'done' property in the items array and flips it from // false to true or vice versa
+    items[index].done = !items[index].done;
   }
 
   addItems.addEventListener('submit', addItem);
