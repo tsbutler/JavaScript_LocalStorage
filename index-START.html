@@ -60,6 +60,8 @@
     const index = el.dataset.index;
     // This accesses the 'done' property in the items array and flips it from // false to true or vice versa
     items[index].done = !items[index].done;
+    localStorage.setItem('items', JSON.stringify(items));
+    populateList(items, itemsList);  
   }
 
   addItems.addEventListener('submit', addItem);
